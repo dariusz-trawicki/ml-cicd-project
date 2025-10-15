@@ -40,7 +40,7 @@ Create Github secret:
   - **Name**: `AWS_OIDC_ROLE_ARN` 
   - **Value**: `<github_oidc_role_arn_value>`
   - **Name**: `AWS_REGION`
-  - **Value**: `eu-central-1`
+  - **Value**(example): `eu-central-1`
 
 The workflow will:
   - build and push a `Docker` image to `ECR`,
