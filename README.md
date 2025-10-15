@@ -45,7 +45,7 @@ Create Github secret:
   - **Name**: `AWS_OIDC_ROLE_ARN` 
   - **Value**: `<github_oidc_role_arn_value>`
   - **Name**: `AWS_REGION`
-  - **Value**(example): `eu-central-1`
+  - **Value**: `eu-central-1`
 
 The workflow will:
   - run `terraform apply` (idempotent updates),
