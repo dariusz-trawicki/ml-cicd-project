@@ -5,7 +5,12 @@ This project shows how to deploy a `Dockerized` application to an `EC2` instance
 
 It includes:
 - `Terraform` code to set up `AWS` resources (`EC2`, `ECR`, `IAM roles`).
-- `GitHub Actions` workflow to build and push `Docker` images to `ECR`, and deploy to `EC2` instance configured to run `Docker` and pull images from `ECR`.
+- `GitHub Actions` workflow to `terraform apply`, build and push `Docker` images to `ECR` and deploy to `EC2` instance configured to run `Docker` and pull images from `ECR`.
+
+#### Problem statement
+
+This project understands how the student's performance (test scores) is affected by other variables such as Gender, Ethnicity, Parental level of education, Lunch and Test preparation course.
+
 
 #### 1. Create S3 bucket for state backend 
 
@@ -43,15 +48,15 @@ Create Github secret:
   - **Value**(example): `eu-central-1`
 
 The workflow will:
-  - build and push a `Docker` image to `ECR`,
   - run `terraform apply` (idempotent updates),
+  - build and push a `Docker` image to `ECR`,
   - refresh the container on the `EC2` instance via `SSM`.
 
 #### 4.Push to GitHub
 
 When pushing to branch main or develop, the workflow will:
-  - **Build & push** `ml-app:latest` to `ECR`.
   - Run `terraform apply` to ensure AWS resources are up to date.
+  - **Build & push** `ml-app:latest` to `ECR`.
   - Restart the container on the `EC2` instance (via `SSM`).
 
 #### 5. Verify Results
