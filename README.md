@@ -67,7 +67,7 @@ curl http://18.153.68.11
 # <h1>Welcome to the home page</h1>
 ```
 
-Open in browser: http://18.153.68.11/predictdata (fill the form, send and get the result).
+Open in your browser: http://18.153.68.11/predictdata (fill out the form, submit it, and get the result).
 
 #### 6. Cleanup
 
